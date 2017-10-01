@@ -11,15 +11,15 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 
 
-const ROUTES = [
-  {
-    path: '',
-    component: AppComponent,
-    children: [
-      { path: 'confirmation', component: ConfirmationComponent  }
-    ]
-  }
-];
+// const ROUTES = [
+//   {
+//     path: '',
+//     component: AppComponent,
+//     children: [
+//       { path: 'confirmation', component: ConfirmationComponent  }
+//     ]
+//   }
+// ];
 
 
 @NgModule({
@@ -31,7 +31,7 @@ const ROUTES = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(ROUTES, { useHash: true }),
+    // RouterModule.forRoot(ROUTES, { useHash: true }),
     BrowserAnimationsModule,
     MdButtonModule,
     MdMenuModule,
