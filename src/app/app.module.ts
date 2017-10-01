@@ -11,7 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuard } from './auth/auth-guard.service';
 import { AuthService } from './auth/auth.service';
 
-import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule, MatInputModule } from '@angular/material';
+import { MatButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule, MatInputModule } from '@angular/material';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 
@@ -39,7 +39,7 @@ const ROUTES = [
     FormsModule,
     RouterModule.forRoot(ROUTES, { useHash: true }),
     BrowserAnimationsModule,
-    MdButtonModule,
+    MatButtonModule,
     MdMenuModule,
     MdCardModule,
     MdToolbarModule,

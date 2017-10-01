@@ -1,14 +1,22 @@
-<form class="example-form">
-  <md-form-field class="example-full-width">
-    <input mdInput placeholder="Company (disabled)" disabled value="Google">
-  </md-form-field>
-
-  <table class="example-full-width" cellspacing="0"><tr>
-    <td><md-form-field class="example-full-width">
-      <input mdInput placeholder="First name">
-    </md-form-field></td>
-    <td><md-form-field class="example-full-width">
-      <input mdInput placeholder="Long Last Name That Will Be Truncated">
-    </md-form-field></td>
-  </tr></table>
-</form>
+<div layout-fill layout="column" layout-align="center center">
+    <div layout="row" layout-align="center none">
+        <md-card flex="50" class="loginCard">
+          <md-card-title>
+            <span>Login</span>
+          </md-card-title>
+          <form class="example-form">
+            <table class="example-full-width" cellspacing="0"><tr>
+              <td><md-form-field class="example-full-width">
+                <input mdInput placeholder="First name">
+              </md-form-field></td>
+              <td><md-form-field class="example-full-width">
+                <input mdInput placeholder="Email">
+              </md-form-field></td>
+            </tr></table>
+            <div>
+              <button type="submit" md-button>Submit</button>
+            </div>
+          </form>
+      </md-card>
+</div>
+</div>
