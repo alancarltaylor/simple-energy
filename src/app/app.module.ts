@@ -1,25 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule }   from '@angular/forms';
+
 
 import { AppComponent } from './app.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule } from '@angular/material';
+import { AuthGuard } from './auth/auth-guard.service';
+import { AuthService } from './auth/auth.service';
+
+import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule, MatInputModule } from '@angular/material';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 
 
-// const ROUTES = [
-//   {
-//     path: '',
-//     component: AppComponent,
-//     children: [
-//       { path: 'confirmation', component: ConfirmationComponent  }
-//     ]
-//   }
-// ];
+const ROUTES = [
+
+{ path: '', redirectTo: '/login', pathMatch: 'full' },
+{ path: 'login', component: LoginComponent,
+    children: [
+      { path: 'confirmation', component: ConfirmationComponent, canActivate: [AuthGuard]  }
+    ]
+  }
+];
 
 
 @NgModule({
@@ -31,15 +36,18 @@ import { HeaderComponent } from './header/header.component';
   ],
   imports: [
     BrowserModule,
-    // RouterModule.forRoot(ROUTES, { useHash: true }),
+    FormsModule,
+    RouterModule.forRoot(ROUTES, { useHash: true }),
     BrowserAnimationsModule,
     MdButtonModule,
     MdMenuModule,
     MdCardModule,
     MdToolbarModule,
-    MdIconModule
+    MdIconModule,
+    MatInputModule
+
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
