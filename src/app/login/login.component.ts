@@ -14,11 +14,14 @@ export class LoginComponent implements OnInit {
   constructor(public sharedService: SharedService, private router: Router) { }
 
   ngOnInit() {
+    this.sharedService.userInfo = {first: "", last: "", email: ""};
   }
 
   onSubmit(f: NgForm) {
-    console.log(f.value);  // { first: '', last: '' }
-    this.sharedService.userInfo = f.value;
+    if (f.value.first){
+      // console.log(f.value);  // { first: '', last: '' }
+      this.sharedService.userInfo = f.value;
+    }
     console.log("sharedasdlkf: ", this.sharedService);
     this.router.navigate(['./confirmation']);
   }
