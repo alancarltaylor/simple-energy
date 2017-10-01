@@ -3,11 +3,11 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class AuthService {
-  token: string;
+  token: boolean;
 
   constructor(private router: Router) {}
 
   isAuthenticated() {
-    return this.token != null;
+    return this.token = true;
   }
 }

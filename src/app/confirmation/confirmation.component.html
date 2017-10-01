@@ -1,3 +1,11 @@
-<p>
-  confirmation works!
-</p>
+<md-card class="confirmationCard">
+  <md-card-title>
+    Congratulations!
+  </md-card-title>
+  <md-card-content>
+
+  <p>First Name: <span>{{this.sharedService.userInfo.first}}</span></p>
+  <p>Last Name: <span>{{this.sharedService.userInfo.last}}</span></p>
+  <p>Email: <span>{{this.sharedService.userInfo.email}}</span></p>
+</md-card-content>
+</md-card>

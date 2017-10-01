@@ -4,19 +4,20 @@
           <md-card-title>
             <span>Login</span>
           </md-card-title>
-          <form class="example-form">
-            <table class="example-full-width" cellspacing="0"><tr>
-              <td><md-form-field class="example-full-width">
-                <input mdInput placeholder="First name">
-              </md-form-field></td>
-              <td><md-form-field class="example-full-width">
-                <input mdInput placeholder="Email">
-              </md-form-field></td>
-            </tr></table>
+          <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="example-form">
+              <md-form-field class="example-full-width">
+                <input required mdInput placeholder="First name" name="first" ngModel #first="ngModel">
+              </md-form-field>
+              <md-form-field class="example-full-width">
+                <input required mdInput placeholder="Last name" name="last" ngModel>
+              </md-form-field>
+              <md-form-field class="example-full-width">
+                <input required mdInput placeholder="Email" name="email" ngModel>
+              </md-form-field>
             <div>
-              <button type="submit" md-button>Submit</button>
+              <button md-button type="submit">Submit</button>
             </div>
           </form>
       </md-card>
-</div>
+  </div>
 </div>

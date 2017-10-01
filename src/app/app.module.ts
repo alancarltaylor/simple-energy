@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AuthGuard } from './auth/auth-guard.service';
 import { AuthService } from './auth/auth.service';
+import { SharedService } from './shared.service';
 
 import { MatButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule, MatInputModule } from '@angular/material';
 import { LoginComponent } from './login/login.component';
@@ -18,12 +19,9 @@ import { HeaderComponent } from './header/header.component';
 
 const ROUTES = [
 
-{ path: '', redirectTo: '/login', pathMatch: 'full' },
-{ path: 'login', component: LoginComponent,
-    children: [
-      { path: 'confirmation', component: ConfirmationComponent, canActivate: [AuthGuard]  }
-    ]
-  }
+{ path: '', redirectTo: '/signup', pathMatch: 'full' },
+{ path: 'signup', component: LoginComponent},
+{ path: 'confirmation', component: ConfirmationComponent, canActivate: [AuthGuard]  }
 ];
 
 
@@ -47,7 +45,7 @@ const ROUTES = [
     MatInputModule
 
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
