@@ -11,7 +11,6 @@ export class ConfirmationComponent implements OnInit {
   constructor(public sharedService: SharedService) { }
 
   ngOnInit() {
-    console.log("sharedkssdl", this.sharedService.userInfo);
   }
 
 }
